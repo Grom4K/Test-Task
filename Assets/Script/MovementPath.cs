@@ -82,6 +82,7 @@ public class MovementPath : MonoBehaviour
         var distanceSquer = (transform.position - pointInPath.Current.position).sqrMagnitude; //проверка дошли ли мы к точке чтобы двигатся к следушей точке
         if (distanceSquer < maxDistanse * maxDistanse) // достаточно ли мы близко
         {
+            gameObject.GetComponent<Renderer>().material.color = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1)); // задаем рандомний цвет 3d обекта
             pointInPath.MoveNext();
         }
     }
